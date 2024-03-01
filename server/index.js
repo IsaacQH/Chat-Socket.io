@@ -20,6 +20,12 @@ io.on('connection', function(socket){     //Se encarga de ver si alguien se cone
     console.log("El cliente con IP: " + socket.handshake.address + " se ha conectado...") //Recupera ip de la persona y confirma conexion
 
     socket.emit('messages', messages)  //Se emite el mensage previo (aqui podria tener una base de datos que almcene el chat)
+
+    socket.on('add-message', function(data){      //Escucha al cliente y obtiene la información enviada de add-message
+        messages.push(data)  //Hace push al array de lo que recibio del cliente
+
+        io.sockets.emit('messages', messages)       //Emite los nuevos mensajes creadis a todos
+    })
 })
 
 

@@ -1,0 +1,37 @@
+@font-face {
+    font-family: 'queen'; /* Nombre de la fuente */
+    src: url('./assets/queen.ttf')
+}
+@font-face {
+    font-family: 'sofia'; /* Nombre de la fuente */
+    src: url('./assets/sofia.otf')
+}
+
+#container {
+    width: 95%;
+    max-width: 400px;
+    height: 80vh; /* Altura del viewport */
+    overflow-y: scroll;
+    margin: 50px auto 0 auto; /* Centrar horizontalmente */
+    border:1px solid #eee;
+    box-shadow: 0px 0px 20px #ccc inset;
+    border-radius: 20px;
+}
+
+.messages {
+    font-family: 'queen'; /* Fuente personalizada */
+    height: auto;
+    margin: 20px;
+    padding:12px 0 0 20px;
+    border-radius: 20px;
+    background-color: rgb(207, 236, 243);
+    border: 1px solid  #ccc; /* Para visualizar el área del contenedor */
+}
+
+.nick1{
+    font-size: 18px;
+}
+
+.msg1{
+    font-size: 16px;
+}

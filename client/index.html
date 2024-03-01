@@ -7,12 +7,21 @@
 
         <script type = "text/javascript" src = "socket.io/socket.io.js"></script>
         <script type = "text/javascript" src = "./main.js"></script>
+
+        <link rel = "stylesheet" href="./styles.css">
+
     </head>
     
     <body>
         <h1>Chat with Socket.io & Node.js</h1>
 
-        <div id ='messages'></div>
+        <div id ='container'></div>
+
+        <form onsubmit="return addMessage(this)">
+            <input class = "nick2" type="text" placeholder="Nickname">
+            <textarea class = "msg2" placeholder="message"></textarea>
+            <input type="submit" value = "Send">
+        </form>
 
     </body>
 </html>
