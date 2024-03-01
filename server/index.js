@@ -8,10 +8,18 @@ var io = require('socket.io')(server)  //Se le pasa el server con express para e
 //CARGAR VISTA ESTATICA DE HTML Y ESTILIZADOS DE CLIENT  ************************************
 app.use(express.static('client'))  //Nombre de la carpeta que cargará la vista estatica para interactuar
 
+//Mensaje default al iniciar app (sustitye a los mensajes previos)
+var messages = [{       //Array default al iniciar 
+    id:1,
+    text:"Bienvenido al chat privado de prueba",
+    nickname: "Bot - Isaac QH"
+}]
 
 //ABRIR CONEXCIÓN AL SOCKET *****************************************************************
 io.on('connection', function(socket){     //Se encarga de ver si alguien se conecto al cliente / socket
-    console.log("El nodo con IP: " + socket.handshacke.address + " se ha conectado...") //Recupera ip de la persona y confirma conexion
+    console.log("El cliente con IP: " + socket.handshake.address + " se ha conectado...") //Recupera ip de la persona y confirma conexion
+
+    socket.emit('messages', messages)  //Se emite el mensage previo (aqui podria tener una base de datos que almcene el chat)
 })
 
 
